@@ -17,7 +17,7 @@ sqlContext = SQLContext(sc)
 # Set up Spark Session using builder
 spark = SparkSession \
     .builder \
-    .appName("Group_MIK") \
+    .appName("any_name") \
     .config("spark.some.config.option", "some-value") \
     .getOrCreate()
 
@@ -26,7 +26,7 @@ spark = SparkSession \
 
 df = spark.read.format('csv').\
     options(inferSchema='true').\
-    load("hdfs://Master:50071/data/mix.csv", separator=",")
+    load("hdfs://xxx.csv", separator=",")
 
 # Change names
 df = df.selectExpr("_c0 as pres", "_c1 as temp")
